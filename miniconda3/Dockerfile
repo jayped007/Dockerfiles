@@ -27,3 +27,10 @@ RUN \
     dpkg -i tini.deb && \
     rm tini.deb && \
     apt-get clean
+
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV PATH /opt/conda/bin:$PATH
+
+ENTRYPOINT [ "/usr/bin/tini", "--" ]
+
